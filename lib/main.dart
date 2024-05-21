@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:strolltask/theme/palette.dart';
-import 'features/screens/main_screen.dart';
+import 'features/main_feature/screens/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +22,7 @@ class _MyAppState extends State<MyApp> {
       theme: Palette.lightMode,
       darkTheme: Palette.darkMode,
       themeMode: ThemeMode.system,
-      home: MainScreen(),
+      home: const MainScreen(),
     );
   }
 }
