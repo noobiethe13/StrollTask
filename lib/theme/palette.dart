@@ -6,6 +6,7 @@ class Palette {
   static const greyColor = Color(0xff0F1115);
   static const whiteColor = Colors.white;
   static const violetColor = Color(0xff8B88EF);
+  static const lightVioletColor = Color(0xffCCC8FF);
 
   // MODES
   static var darkMode = ThemeData.dark().copyWith(
