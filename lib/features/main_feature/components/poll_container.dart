@@ -31,7 +31,7 @@ class _PollContainerState extends State<PollContainer> {
             children: [
               CircleAvatar(
                 backgroundImage: AssetImage(AssetPaths.profilePicPath),
-                radius: 40,
+                radius: 30,
               ),
               SizedBox(width: 10),
               Expanded(
@@ -51,7 +51,7 @@ class _PollContainerState extends State<PollContainer> {
                     Text(
                       'What is your favourite time of the day?',
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 20,
                         color: Colors.white,
                         fontFamily: 'Proxima Nova',
                         fontWeight: FontWeight.bold,
@@ -63,26 +63,26 @@ class _PollContainerState extends State<PollContainer> {
               ),
             ],
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           const Center(
             child: Text(
               "'Mine is definitely the peace in the morning.'",
               style: TextStyle(
                 fontFamily: 'Proxima Nova',
-                fontSize: 16,
+                fontSize: 14,
                 color: Colors.grey
               ),
             ),
           ),
-          const SizedBox(height: 20,),
-          Expanded(
+          const SizedBox(height: 10,),
+          Flexible(
             child: GridView.count(
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               crossAxisCount: 2,
               crossAxisSpacing: 10,
               mainAxisSpacing: 10,
-              childAspectRatio: 2.5,
+              childAspectRatio: 3,
               padding: EdgeInsets.zero,
               children: List.generate(items.length, (index) {
                 bool isSelected = selectedIndex == index;
@@ -95,12 +95,12 @@ class _PollContainerState extends State<PollContainer> {
                   child: Container(
                     decoration: BoxDecoration(
                       color: Palette.greyColor,
-                      borderRadius: BorderRadius.circular(8.0),
+                      borderRadius: BorderRadius.circular(16.0),
                       border: isSelected
                           ? Border.all(color: Palette.violetColor, width: 2.0)
                           : null,
                     ),
-                    padding: const EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -141,54 +141,55 @@ class _PollContainerState extends State<PollContainer> {
               }),
             ),
           ),
+          const SizedBox(height: 20,),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Pick your option',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'Proxima Nova',
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Pick your option',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontFamily: 'Proxima Nova',
+                      ),
                     ),
-                  ),
-                  SizedBox(height: 5),
-                  Text(
-                    'See who has similar mind',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontFamily: 'Proxima Nova',
+                    Text(
+                      'See who has similar mind',
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontFamily: 'Proxima Nova',
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(12),
-                      backgroundColor: Colors.transparent,
-                      side: BorderSide(color: Palette.violetColor, width: 2),
+                  ],
+                ),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        padding: const EdgeInsets.all(12),
+                        backgroundColor: Colors.transparent,
+                        side: const BorderSide(color: Palette.violetColor, width: 2),
+                      ),
+                      child: const Icon(Icons.mic_rounded, color: Palette.violetColor, size: 35,),
                     ),
-                    child: const Icon(Icons.mic_rounded, color: Palette.violetColor, size: 30,),
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                      shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(12),
-                      backgroundColor: Palette.violetColor,
+                    SizedBox(width: 5,),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        shape: const CircleBorder(),
+                        padding: const EdgeInsets.all(12),
+                        backgroundColor: Palette.violetColor,
+                      ),
+                      child: const Icon(Icons.arrow_forward, color: Colors.black, size: 35,),
                     ),
-                    child: const Icon(Icons.arrow_forward, color: Colors.black, size: 30,),
-                  ),
-                ],
-              ),
-            ],
-          ),
+                  ],
+                ),
+              ],
+            ),
         ],
       ),
     );
