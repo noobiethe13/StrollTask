@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/constants/asset_paths.dart';
 import '../../../theme/palette.dart';
 
@@ -10,10 +9,18 @@ class BackgroundComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ClipRect(
-          child: Align(
-            alignment: Alignment.topCenter,
-            heightFactor: 0.78,
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.6,
+          child: ShaderMask(
+            shaderCallback: (Rect bounds) {
+              return const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.white, Colors.transparent],
+                stops: [0.6, 1.0],
+              ).createShader(bounds);
+            },
+            blendMode: BlendMode.dstIn,
             child: Image.asset(
               AssetPaths.mainBackgroundPath,
               width: double.infinity,
