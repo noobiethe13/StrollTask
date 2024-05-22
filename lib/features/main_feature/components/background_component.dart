@@ -10,7 +10,7 @@ class BackgroundComponent extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.6,
+          height: MediaQuery.of(context).size.height * 0.7,
           child: ShaderMask(
             shaderCallback: (Rect bounds) {
               return const LinearGradient(
