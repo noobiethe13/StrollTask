@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:strolltask/features/main_feature/components/background_component.dart';
+import 'package:strolltask/features/main_feature/components/poll_container.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -12,15 +13,18 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
         children: [
-          const Expanded(
-            flex: 7,
+          const Positioned.fill(
             child: BackgroundComponent(),
           ),
-          Expanded(
-            flex: 3,
-            child: Container(
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.5,
+            left: 0,
+            right: 0,
+            child: SizedBox(
+              height: MediaQuery.of(context).size.height * 0.5,
+              child: const PollContainer(),
             ),
           ),
         ],
